@@ -22,7 +22,8 @@ class Lastfm
           [:limit, nil]
         ]
       ) do |response|
-        Util.force_array(response.xml['tracks']['track'])
+        [Util.force_array(response.xml['tracks']['total']),Util.force_array(response.xml['tracks']['track'])]
+
       end
     end
   end
